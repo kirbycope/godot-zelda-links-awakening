@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://jrhnlttn66hu" path="res://scenes/trendy_game.gd" id="1_a011m"]
 [ext_resource type="AudioStream" uid="uid://jp4d5vrqpn7y" path="res://assets/zelda_trendy/1.13 Trendy Game.ogg" id="1_ov7p3"]
 [ext_resource type="PackedScene" uid="uid://wgillhnocia4" path="res://assets/zelda_trendy/interior.gltf" id="2_a011m"]
-[ext_resource type="PackedScene" uid="uid://ujh51l2wv1vk" path="res://addons/3d_player_controller/player_3d.tscn" id="3_qm60x"]
+[ext_resource type="PackedScene" uid="uid://e6ln0lib3t1" path="res://scenes/player_3d.tscn" id="3_omh43"]
 [ext_resource type="PackedScene" uid="uid://cnbolnusafmch" path="res://assets/zelda_trendy/buttons.gltf" id="5_qm60x"]
 [ext_resource type="PackedScene" uid="uid://dieri7jmaoxmn" path="res://assets/zelda_trendy/railing.gltf" id="6_iyb67"]
 [ext_resource type="PackedScene" uid="uid://cqcas5o6lnxuw" path="res://assets/gamester/NpcGameShopOwner.fbx" id="7_omh43"]
@@ -21,21 +21,6 @@ sky = SubResource("Sky_omh43")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Animation" id="Animation_omh43"]
-resource_name = "raise"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-2.14126, -1.12047, 0.745532), Vector3(-2.14126, -0.320468, 0.745532)]
-}
-
 [sub_resource type="Animation" id="Animation_e62at"]
 length = 0.001
 tracks/0/type = "value"
@@ -49,6 +34,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-2.14126, -1.12047, 0.745532)]
+}
+
+[sub_resource type="Animation" id="Animation_omh43"]
+resource_name = "raise"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.14126, -1.12047, 0.745532), Vector3(-2.14126, -0.320468, 0.745532)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ioi2s"]
@@ -71,7 +71,7 @@ environment = SubResource("Environment_e62at")
 stream = ExtResource("1_ov7p3")
 autoplay = true
 
-[node name="Player" parent="." instance=ExtResource("3_qm60x")]
+[node name="Player" parent="." instance=ExtResource("3_omh43")]
 
 [node name="interior" parent="." instance=ExtResource("2_a011m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
