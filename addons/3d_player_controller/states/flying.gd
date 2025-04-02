@@ -103,7 +103,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_flying_fast:
 
 				# Play the animation "animation_flying Fast" animation
-				player.animation_player.play(animation_flying_fast)
+				player.animation_player.play(animation_flying_fast + "/mixamo_com")
 
 		# The player must not be "sprinting"
 		else:
@@ -112,7 +112,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_flying:
 
 				# Play the "flying" animation
-				player.animation_player.play(animation_flying)
+				player.animation_player.play(animation_flying + "/mixamo_com")
 
 
 ## Start "flying".

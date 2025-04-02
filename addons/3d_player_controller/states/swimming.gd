@@ -60,7 +60,7 @@ func play_animation() -> void:
 				player.visuals_aux_scene.position.y = lerp(player.visuals_aux_scene.position.y, player.collision_height/2, 0.25)
 
 				# Play the "swimming" animation
-				player.animation_player.play(animation_swimming)
+				player.animation_player.play(animation_swimming + "/mixamo_com")
 
 			# Check if the audio player is not playing or if the stream is not the "swimming" sound effect
 			if not player.audio_player.playing or player.audio_player.stream != swimming_sound:
@@ -81,7 +81,7 @@ func play_animation() -> void:
 				player.visuals_aux_scene.position.y = player.collision_height / 4
 
 				# Play the "treading water" animation
-				player.animation_player.play(animation_treading_water)
+				player.animation_player.play(animation_treading_water + "/mixamo_com")
 
 			# Check if the audio player is streaming the "swimming" sound effect
 			if player.audio_player.stream == swimming_sound:

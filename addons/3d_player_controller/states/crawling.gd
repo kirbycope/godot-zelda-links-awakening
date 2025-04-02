@@ -55,7 +55,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != player.animation_crouching_move_holding_rifle:
 
 				# Play the "crouching and moving, holding a rifle" animation
-				player.animation_player.play(player.animation_crouching_move_holding_rifle, -1, 0.75)
+				player.animation_player.play(player.animation_crouching_move_holding_rifle + "/mixamo_com", -1, 0.75)
 
 		# The player must be unarmed
 		else:
@@ -64,7 +64,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_crawling:
 
 				# Play the "crawling" animation
-				player.animation_player.play(animation_crawling)
+				player.animation_player.play(animation_crawling + "/mixamo_com")
 
 
 ## Start "crawling".

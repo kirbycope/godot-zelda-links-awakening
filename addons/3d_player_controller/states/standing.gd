@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 						if player.animation_player.current_animation != kicking_low_left:
 
 							# Play the "kicking low, left" animation
-							player.animation_player.play(kicking_low_left)
+							player.animation_player.play(kicking_low_left + "/mixamo_com")
 
 							# Check the kick hits something
 							player.check_kick_collision()
@@ -87,7 +87,7 @@ func _input(event: InputEvent) -> void:
 						if player.animation_player.current_animation != kicking_low_right:
 
 							# Play the "kicking low, right" animation
-							player.animation_player.play(kicking_low_right)
+							player.animation_player.play(kicking_low_right + "/mixamo_com")
 
 							# Check the kick hits something
 							player.check_kick_collision()
@@ -126,7 +126,7 @@ func _input(event: InputEvent) -> void:
 						if player.animation_player.current_animation != punching_high_left:
 
 								# Play the "punching high, left" animation
-								player.animation_player.play(punching_high_left)
+								player.animation_player.play(punching_high_left + "/mixamo_com")
 
 								# Check the punch hits something
 								player.check_punch_collision()
@@ -186,7 +186,7 @@ func _input(event: InputEvent) -> void:
 						if player.animation_player.current_animation != punching_high_right:
 
 							# Play the "punching high, right" animation
-							player.animation_player.play(punching_high_right)
+							player.animation_player.play(punching_high_right + "/mixamo_com")
 
 							# Check the punch hits something
 							player.check_punch_collision()
@@ -260,7 +260,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_casting_fishing_rod:
 
 					# Play the "standing, casting fishing rod" animation
-					player.animation_player.play(animation_standing_casting_fishing_rod)
+					player.animation_player.play(animation_standing_casting_fishing_rod + "/mixamo_com")
 
 			# Check if the player is "reeling"
 			elif player.is_reeling:
@@ -269,7 +269,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_reeling_fishing_rod:
 
 					# Play the "standing, holding reeling rod" animation
-					player.animation_player.play(animation_standing_reeling_fishing_rod)
+					player.animation_player.play(animation_standing_reeling_fishing_rod + "/mixamo_com")
 
 				# Get the held fishing rod's animation player
 				var fishing_rod_animation_player = player.held_item_mount.get_node("FishingRod/AnimationPlayer")
@@ -287,7 +287,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_holding_fishing_rod:
 
 					# Play the "standing, holding fishing rod" animation
-					player.animation_player.play(animation_standing_holding_fishing_rod)
+					player.animation_player.play(animation_standing_holding_fishing_rod + "/mixamo_com")
 
 		# Check if the player is "holding a rifle"
 		elif player.is_holding_rifle:
@@ -299,7 +299,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_firing_rifle:
 
 					# Play the "standing, firing rifle" animation
-					player.animation_player.play(animation_standing_firing_rifle)
+					player.animation_player.play(animation_standing_firing_rifle + "/mixamo_com")
 
 			# Check if the player is "aiming"
 			elif player.is_aiming:
@@ -308,7 +308,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_aiming_rifle:
 
 					# Play the "standing, aiming rifle" animation
-					player.animation_player.play(animation_standing_aiming_rifle)
+					player.animation_player.play(animation_standing_aiming_rifle + "/mixamo_com")
 
 			# The player must be "idle"
 			else:
@@ -317,7 +317,7 @@ func play_animation() -> void:
 				if player.animation_player.current_animation != animation_standing_holding_rifle:
 
 					# Play the "standing idle, holding rifle" animation
-					player.animation_player.play(animation_standing_holding_rifle)
+					player.animation_player.play(animation_standing_holding_rifle + "/mixamo_com")
 
 		# Check if the player is "holding a tool"
 		elif player.is_holding_tool:
@@ -326,7 +326,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_standing_holding_tool:
 
 				# Play the "standing, holding tool" animation
-				player.animation_player.play(animation_standing_holding_tool)
+				player.animation_player.play(animation_standing_holding_tool + "/mixamo_com")
 
 		# The player must be unarmed
 		else:
@@ -335,7 +335,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_standing:
 
 				# Play the "standing idle" animation
-				player.animation_player.play(animation_standing)
+				player.animation_player.play(animation_standing + "/mixamo_com")
 
 
 ## Start "standing".

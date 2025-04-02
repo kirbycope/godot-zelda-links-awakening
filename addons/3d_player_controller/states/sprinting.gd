@@ -57,7 +57,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_sprinting_holding_rifle:
 
 				# Play the "sprinting, holding a rifle" animation
-				player.animation_player.play(animation_sprinting_holding_rifle)
+				player.animation_player.play(animation_sprinting_holding_rifle + "/mixamo_com")
 
 		# The player must be unarmed
 		else:
@@ -66,7 +66,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_sprinting:
 
 				# Play the "sprinting" animation
-				player.animation_player.play(animation_sprinting)
+				player.animation_player.play(animation_sprinting + "/mixamo_com")
 
 
 ## Start "sprinting".

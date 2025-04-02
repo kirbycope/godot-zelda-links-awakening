@@ -99,7 +99,7 @@ func play_animation() -> void:
 					if player.animation_player.current_animation != animation_skateboarding_slow:
 
 						# Play the "slow skateboarding" animation
-						player.animation_player.play(animation_skateboarding_slow)
+						player.animation_player.play(animation_skateboarding_slow + "/mixamo_com")
 
 				# Check if the player speed is faster than "walking" but slower than or equal to "running"
 				elif player.speed_walking < player.speed_current and player.speed_current <= player.speed_running:
@@ -108,7 +108,7 @@ func play_animation() -> void:
 					if player.animation_player.current_animation != animation_skateboarding_normal:
 
 						# Play the "normal skateboarding" animation
-						player.animation_player.play(animation_skateboarding_normal)
+						player.animation_player.play(animation_skateboarding_normal + "/mixamo_com")
 
 				# Check if the player speed is faster than "running"
 				elif player.speed_running < player.speed_current:
@@ -117,7 +117,7 @@ func play_animation() -> void:
 					if player.animation_player.current_animation != animation_skateboarding_fast:
 
 						# Play the "slow skateboarding" animation
-						player.animation_player.play(animation_skateboarding_fast)
+						player.animation_player.play(animation_skateboarding_fast + "/mixamo_com")
 
 			# The player must be not grounded
 			else:
@@ -129,7 +129,7 @@ func play_animation() -> void:
 		else:
 
 				# Play the "slow skateboarding" animation
-				player.animation_player.play(animation_skateboarding_slow)
+				player.animation_player.play(animation_skateboarding_slow + "/mixamo_com")
 
 				# Slow down the animation player
 				player.animation_player.speed_scale = 0.5

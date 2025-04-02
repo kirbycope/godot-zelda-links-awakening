@@ -79,7 +79,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_running_holding_rifle:
 
 				# Play the "running, holding rifle" animation
-				player.animation_player.play(animation_running_holding_rifle)
+				player.animation_player.play(animation_running_holding_rifle + "/mixamo_com")
 
 		# Check if the player is "holding a tool"
 		elif player.is_holding_tool:
@@ -88,7 +88,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_running_holding_tool:
 
 				# Play the "running, holding a tool" animation
-				player.animation_player.play(animation_running_holding_tool)
+				player.animation_player.play(animation_running_holding_tool + "/mixamo_com")
 
 		# The player must be unarmed
 		else:
@@ -97,7 +97,7 @@ func play_animation() -> void:
 			if player.animation_player.current_animation != animation_running:
 
 				# Play the "running" animation
-				player.animation_player.play(animation_running)
+				player.animation_player.play(animation_running + "/mixamo_com")
 
 
 ## Start "running".

@@ -66,7 +66,7 @@ func play_animation() -> void:
 				player.animation_player.stop()
 
 				# Play the "hanging, shimmy-ing left" animation
-				player.animation_player.play(animation_hanging_shimmy_left)
+				player.animation_player.play(animation_hanging_shimmy_left + "/mixamo_com")
 
 		# Check if the player if moving right
 		elif Input.is_action_pressed("move_right"):
@@ -78,7 +78,7 @@ func play_animation() -> void:
 				player.animation_player.stop()
 
 				# Play the "hanging, shimmy-ing left" animation
-				player.animation_player.play(animation_hanging_shimmy_right)
+				player.animation_player.play(animation_hanging_shimmy_right + "/mixamo_com")
 
 		# The player must not be moving
 		else:
@@ -96,7 +96,7 @@ func play_animation() -> void:
 				player.animation_player.stop()
 
 				# Play the "hanging" animation
-				player.animation_player.play(animation_hanging)
+				player.animation_player.play(animation_hanging + "/mixamo_com")
 
 
 ## Moves the player in the given direction.

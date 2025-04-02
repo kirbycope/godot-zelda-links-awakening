@@ -118,7 +118,7 @@ func _on_emote_4_button_button_down() -> void:
 func emote1() -> void:
 
 	# Play the "waving" animation
-	player.animation_player.play("Waving")
+	player.animation_player.play("Waving" + "/mixamo_com")
 
 	# Flag the animation player as locked
 	player.is_animation_locked = true
@@ -131,7 +131,7 @@ func emote1() -> void:
 func emote2() -> void:
 
 	# Play the "clapping" animation
-	player.animation_player.play("Clapping")
+	player.animation_player.play("Clapping" + "/mixamo_com")
 
 	# Flag the animation player as locked
 	player.is_animation_locked = true
@@ -144,7 +144,7 @@ func emote2() -> void:
 func emote3() -> void:
 
 	# Play the "crying" animation
-	player.animation_player.play("Crying")
+	player.animation_player.play("Crying" + "/mixamo_com")
 
 	# Flag the animation player as locked
 	player.is_animation_locked = true
@@ -157,7 +157,7 @@ func emote3() -> void:
 func emote4() -> void:
 
 	# Play the "bowing" animation
-	player.animation_player.play("Quick_Informal_Bow")
+	player.animation_player.play("Quick_Informal_Bow" + "/mixamo_com")
 
 	# Flag the animation player as locked
 	player.is_animation_locked = true

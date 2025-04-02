@@ -29,7 +29,7 @@ func play_animation() -> void:
 		if player.animation_player.current_animation != animation_driving:
 
 			# Play the "crouching idle, holding rifle" animation
-			player.animation_player.play(animation_driving)
+			player.animation_player.play(animation_driving + "/mixamo_com")
 
 
 ## Start "driving".
