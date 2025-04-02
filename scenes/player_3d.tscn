@@ -2726,6 +2726,49 @@ skin = SubResource("Skin_7twc6")
 mesh = SubResource("ArrayMesh_acvn0")
 skin = SubResource("Skin_ebtvl")
 
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Visuals/AuxScene/Armature/Skeleton3D"]
+setting_count = 2
+settings/0/root_bone_name = "hair_a"
+settings/0/root_bone = 40
+settings/0/end_bone_name = "hair_d_end"
+settings/0/end_bone = 44
+settings/0/extend_end_bone = false
+settings/0/center_from = 1
+settings/0/center_node = NodePath("")
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 1.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.5
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+settings/1/root_bone_name = "hat_a"
+settings/1/root_bone = 45
+settings/1/end_bone_name = "hat_c_end"
+settings/1/end_bone = 48
+settings/1/extend_end_bone = false
+settings/1/center_from = 1
+settings/1/center_node = NodePath("")
+settings/1/individual_config = false
+settings/1/rotation_axis = 3
+settings/1/radius/value = 0.02
+settings/1/radius/damping_curve = null
+settings/1/stiffness/value = 1.0
+settings/1/stiffness/damping_curve = null
+settings/1/drag/value = 0.4
+settings/1/drag/damping_curve = null
+settings/1/gravity/value = 0.5
+settings/1/gravity/damping_curve = null
+settings/1/gravity/direction = Vector3(0, -1, 0)
+settings/1/enable_all_child_collisions = true
+settings/1/exclude_collision_count = 0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals/AuxScene"]
 libraries = {
 &"": SubResource("AnimationLibrary_xh7av"),
