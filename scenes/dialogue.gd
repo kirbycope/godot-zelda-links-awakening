@@ -7,6 +7,8 @@ extends Control
 func _on_play_pressed() -> void:
 	hide()
 	player.game_paused = false
+	player.velocity = Vector3.ZERO
+	player.animation_player.stop()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	trendy_game.start()
 

@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c4ofy6cyglna8" path="res://scenes/crane.tscn" id="3_pccc8"]
 [ext_resource type="Script" uid="uid://b3obpenvhqdv3" path="res://scenes/conveyor.gd" id="5_e62at"]
 [ext_resource type="PackedScene" uid="uid://lvbieafgx02j" path="res://scenes/godot_plush.tscn" id="5_ioi2s"]
-[ext_resource type="PackedScene" uid="uid://cnbolnusafmch" path="res://assets/zelda_trendy/buttons.gltf" id="5_qm60x"]
-[ext_resource type="PackedScene" uid="uid://dieri7jmaoxmn" path="res://assets/zelda_trendy/railing.gltf" id="6_iyb67"]
-[ext_resource type="PackedScene" uid="uid://cqcas5o6lnxuw" path="res://assets/gamester/NpcGameShopOwner.fbx" id="7_omh43"]
+[ext_resource type="PackedScene" uid="uid://unf3kpsv7sry" path="res://scenes/buttons.tscn" id="8_pccc8"]
+[ext_resource type="PackedScene" uid="uid://4mq46iptdxcu" path="res://scenes/railing.tscn" id="9_siuir"]
+[ext_resource type="PackedScene" uid="uid://bxcc5v72nwrxh" path="res://scenes/npc_game_shop_owner.tscn" id="10_pccc8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iyb67"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -86,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8, 5, -1.5)
 [node name="Player" parent="." instance=ExtResource("3_omh43")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
-[node name="Godot Plush" parent="." instance=ExtResource("5_ioi2s")]
+[node name="GodotPlush" parent="." instance=ExtResource("5_ioi2s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32562, 0.937731, -2.26081)
 
 [node name="interior" parent="." instance=ExtResource("2_a011m")]
@@ -183,37 +183,37 @@ visible = false
 use_collision = true
 size = Vector3(2.99275, 1.21826, 1.51703)
 
-[node name="buttons" parent="." instance=ExtResource("5_qm60x")]
+[node name="Buttons" parent="." instance=ExtResource("8_pccc8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13776, 0, -0.605592)
 
-[node name="Base" type="CSGBox3D" parent="buttons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00640237, 0.2, 0.0766193)
+[node name="Base" type="CSGBox3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13136, 0.2, -0.528973)
 visible = false
 use_collision = true
 size = Vector3(1.6, 0.6, 0.620117)
 
-[node name="Panel" type="CSGBox3D" parent="buttons"]
-transform = Transform3D(1, 0, 0, 0, 0.602693, -0.797973, 0, 0.797973, 0.602693, 0, 0.722282, 0.123318)
+[node name="Panel" type="CSGBox3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 0.602693, -0.797973, 0, 0.797973, 0.602693, -1.13776, 0.722282, -0.482274)
 visible = false
 use_collision = true
 size = Vector3(1.6, 0.1, 0.7)
 
-[node name="railing" parent="." instance=ExtResource("6_iyb67")]
+[node name="Railing" parent="." instance=ExtResource("9_siuir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14126, -1.12047, 0.745532)
 
-[node name="Railing" type="CSGBox3D" parent="railing"]
+[node name="Railing" type="CSGBox3D" parent="Railing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0171905, 0.570468, 0.0155306)
 visible = false
 use_collision = true
 size = Vector3(0.248145, 1.1, 2.55295)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="railing"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Railing"]
 libraries = {
 &"": SubResource("AnimationLibrary_ioi2s")
 }
 
-[node name="NpcGameShopOwner" parent="." instance=ExtResource("7_omh43")]
-transform = Transform3D(-1.39876e-06, 0, -32, 0, 32, 0, 32, 0, -1.39876e-06, 4.77138, 0, 0.794854)
+[node name="NpcGameShopOwner" parent="." instance=ExtResource("10_pccc8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.77138, 0, 0.794854)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0.2)

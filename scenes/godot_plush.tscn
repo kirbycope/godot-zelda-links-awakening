@@ -6,7 +6,7 @@
 resource_name = "Material.001"
 cull_mode = 2
 albedo_texture = ExtResource("1_a6164")
-roughness = 0.981818
+roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcfg6"]
 resource_name = "godou_Sphere_010"
@@ -2973,7 +2973,7 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_a6164"]
 radius = 0.22
 
-[node name="Godot Plush" type="RigidBody3D"]
+[node name="GodotPlush" type="RigidBody3D"]
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
