@@ -34,7 +34,7 @@ func _physics_process(delta):
 			body.velocity = character_velocity
 	
 	# Animate the material texture (optional)
-	if belt_material and _bodies_on_belt.size() > 0:
+	if belt_material:
 		belt_material.uv1_offset.y -= speed*.50 * delta * 0.1
 
 

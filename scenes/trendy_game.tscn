@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyxt6p2sbl7mm"]
+[gd_scene load_steps=19 format=3 uid="uid://cyxt6p2sbl7mm"]
 
 [ext_resource type="Script" uid="uid://jrhnlttn66hu" path="res://scenes/trendy_game.gd" id="1_a011m"]
 [ext_resource type="AudioStream" uid="uid://jp4d5vrqpn7y" path="res://assets/zelda_trendy/1.13 Trendy Game.ogg" id="1_ov7p3"]
@@ -63,6 +63,9 @@ _data = {
 &"raise": SubResource("Animation_omh43")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pccc8"]
+size = Vector3(1.5, 0.4, 0.5)
+
 [node name="TrendyGame" type="Node3D"]
 script = ExtResource("1_a011m")
 
@@ -96,16 +99,34 @@ use_collision = true
 size = Vector3(13, 3.7, 0.8)
 
 [node name="Front Wall" type="CSGBox3D" parent="interior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.35, 2.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.35, 2.65)
 visible = false
 use_collision = true
-size = Vector3(13, 3.7, 0.3)
+size = Vector3(5, 3.7, 0.7)
+
+[node name="Front Wall3" type="CSGBox3D" parent="interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.35, 2.65)
+visible = false
+use_collision = true
+size = Vector3(5, 3.7, 0.7)
+
+[node name="Front Wall2" type="CSGBox3D" parent="interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.35, 3.35)
+visible = false
+use_collision = true
+size = Vector3(3, 3.7, 0.7)
 
 [node name="Left Wall" type="CSGBox3D" parent="interior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35, 1.35, -1.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.55, 1.35, 1)
 visible = false
 use_collision = true
-size = Vector3(1.3, 3.7, 7.5)
+size = Vector3(0.9, 3.7, 3)
+
+[node name="Left Wall2" type="CSGBox3D" parent="interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35, 1.35, -2.75)
+visible = false
+use_collision = true
+size = Vector3(1.3, 3.7, 4.5)
 
 [node name="Right Wall" type="CSGBox3D" parent="interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35, 1.35, -1.25)
@@ -183,6 +204,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14126, -1.12047, 0.745532)
 [node name="Railing" type="CSGBox3D" parent="railing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0171905, 0.570468, 0.0155306)
 visible = false
+use_collision = true
 size = Vector3(0.248145, 1.1, 2.55295)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="railing"]
@@ -193,5 +215,14 @@ libraries = {
 [node name="NpcGameShopOwner" parent="." instance=ExtResource("7_omh43")]
 transform = Transform3D(-1.39876e-06, 0, -32, 0, 32, 0, 32, 0, -1.39876e-06, 4.77138, 0, 0.794854)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500001, 0.2, -0.25)
+shape = SubResource("BoxShape3D_pccc8")
+
 [connection signal="body_entered" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_entered"]
 [connection signal="body_exited" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

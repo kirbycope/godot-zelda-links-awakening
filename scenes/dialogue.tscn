@@ -1,0 +1,213 @@
+[gd_scene load_steps=11 format=3 uid="uid://tseulsfff0i6"]
+
+[ext_resource type="Texture2D" uid="uid://3kcrr46hb4h0" path="res://assets/images/pattern-green-diamond.jpg" id="1_bfpow"]
+[ext_resource type="Texture2D" uid="uid://da6dmnrgu7vco" path="res://assets/images/pattern-blk-diamond.jpg" id="1_jwyou"]
+[ext_resource type="Script" uid="uid://xnfn2ck8up2n" path="res://scenes/dialogue.gd" id="1_x1cjp"]
+[ext_resource type="Texture2D" uid="uid://drp0v30d1v3d8" path="res://assets/images/copy-deco-corner.png" id="2_fyky8"]
+[ext_resource type="FontFile" uid="uid://bigb8o1dramhu" path="res://assets/poppins/Poppins-Regular.ttf" id="4_led2e"]
+[ext_resource type="Texture2D" uid="uid://w3xhxy6evbsg" path="res://assets/images/deco-leaves-gold.png" id="5_x1cjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp716"]
+bg_color = Color(0, 0, 0, 0.490196)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72549, 0.611765, 0.329412, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03vpb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.72549, 0.611765, 0.329412, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_3n4vj"]
+font = ExtResource("4_led2e")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1cjp"]
+font = ExtResource("4_led2e")
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1cjp")
+
+[node name="Body" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -256.0
+offset_top = -232.0
+offset_right = -216.0
+offset_bottom = -192.0
+
+[node name="Background" type="TextureRect" parent="Body"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 496.0
+offset_bottom = 226.0
+texture = ExtResource("1_bfpow")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Body"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 56.0
+offset_bottom = 40.0
+texture = ExtResource("2_fyky8")
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="Body"]
+layout_mode = 0
+offset_left = 410.0
+offset_right = 496.0
+offset_bottom = 86.0
+texture = ExtResource("2_fyky8")
+flip_h = true
+flip_v = true
+
+[node name="TextureRect3" type="TextureRect" parent="Body"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 140.0
+offset_right = 102.0
+offset_bottom = 226.0
+texture = ExtResource("2_fyky8")
+
+[node name="TextureRect4" type="TextureRect" parent="Body"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 140.0
+offset_right = 496.0
+offset_bottom = 226.0
+texture = ExtResource("2_fyky8")
+flip_h = true
+
+[node name="Play" type="Button" parent="Body"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 153.0
+offset_right = 252.0
+offset_bottom = 196.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.2, 0.482353, 0.294118, 1)
+theme_override_fonts/font = ExtResource("4_led2e")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_tp716")
+theme_override_styles/normal = SubResource("StyleBoxFlat_03vpb")
+text = "⎯⎯ Play⎯⎯ "
+
+[node name="TextureRect" type="TextureRect" parent="Body/Play"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 26.0
+offset_bottom = 36.0
+texture = ExtResource("5_x1cjp")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Body/Play"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 11.0
+offset_right = 178.0
+offset_bottom = 36.0
+texture = ExtResource("5_x1cjp")
+stretch_mode = 2
+flip_h = true
+
+[node name="Pass" type="Button" parent="Body"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 153.0
+offset_right = 445.0
+offset_bottom = 196.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.2, 0.482353, 0.294118, 1)
+theme_override_fonts/font = ExtResource("4_led2e")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_tp716")
+theme_override_styles/normal = SubResource("StyleBoxFlat_03vpb")
+text = "⎯⎯ Pass⎯⎯ "
+
+[node name="TextureRect" type="TextureRect" parent="Body/Pass"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 26.0
+offset_bottom = 36.0
+texture = ExtResource("5_x1cjp")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Body/Pass"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 11.0
+offset_right = 178.0
+offset_bottom = 36.0
+texture = ExtResource("5_x1cjp")
+stretch_mode = 2
+flip_h = true
+
+[node name="Header" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -256.0
+offset_top = -216.0
+offset_right = -216.0
+offset_bottom = -176.0
+
+[node name="Border" type="ColorRect" parent="Header"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 202.0
+offset_bottom = 50.0
+color = Color(0.72549, 0.611765, 0.329412, 1)
+
+[node name="Background" type="TextureRect" parent="Header"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+texture = ExtResource("1_jwyou")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Name" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 193.0
+offset_bottom = 48.0
+text = "Gamester"
+label_settings = SubResource("LabelSettings_3n4vj")
+
+[node name="Text" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 72.0
+offset_right = 485.0
+offset_bottom = 123.0
+text = "TRENDY GAME! One play 10 rupees."
+label_settings = SubResource("LabelSettings_x1cjp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Body/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Body/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Body/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Body/Pass" to="." method="_on_pass_mouse_entered"]
+[connection signal="mouse_exited" from="Body/Pass" to="." method="_on_pass_mouse_exited"]
+[connection signal="pressed" from="Body/Pass" to="." method="_on_pass_pressed"]

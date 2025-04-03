@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=4 uid="uid://e6ln0lib3t1"]
+[gd_scene load_steps=125 format=4 uid="uid://e6ln0lib3t1"]
 
 [ext_resource type="Script" uid="uid://2iaqywmqcahl" path="res://addons/3d_player_controller/player_3d.gd" id="1_qtgli"]
 [ext_resource type="PackedScene" uid="uid://c7x2c4rsai64q" path="res://addons/3d_player_controller/virtual_buttons.tscn" id="2_3l2jk"]
@@ -71,6 +71,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://l8jj0sysu5o5" path="res://assets/mixamo/animations/Walk_With_Rifle_Low.fbx" id="47_w4g4o"]
 [ext_resource type="AnimationLibrary" uid="uid://brekybhmmqd5h" path="res://assets/mixamo/animations/Walking_In_Place.fbx" id="48_axmco"]
 [ext_resource type="AnimationLibrary" uid="uid://cbmqvunr5o3ut" path="res://assets/mixamo/animations/Waving.fbx" id="49_2tknc"]
+[ext_resource type="PackedScene" uid="uid://tseulsfff0i6" path="res://scenes/dialogue.tscn" id="52_xxeaf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e6s3"]
 radius = 0.3
@@ -2852,6 +2853,13 @@ visible = false
 
 [node name="Settings" parent="CameraMount/Camera3D" instance=ExtResource("22_wisfe")]
 visible = false
+
+[node name="Dialogue" parent="CameraMount/Camera3D" instance=ExtResource("52_xxeaf")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraMount/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)

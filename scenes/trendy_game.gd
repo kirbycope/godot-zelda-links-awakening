@@ -1,14 +1,21 @@
 extends Node3D
 
-@onready var player: CharacterBody3D = $Player
+@onready var crane: Node3D = $Crane
+@onready var crane_animation_player: AnimationPlayer = $Crane/Armature/AnimationPlayer
+@onready var dialogue: Control = $Player/CameraMount/Camera3D/Dialogue
 @onready var godot_plush = $"Godot Plush"
+@onready var player: CharacterBody3D = $Player
+@onready var railing_animation_player: AnimationPlayer = $railing/AnimationPlayer
+
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	player.camera_mount.rotation.x = deg_to_rad(-30)
-	#player.enable_jumping = false
+	player.enable_jumping = false
 	player.enable_kicking = false
 	player.lock_camera = true
+	dialogue.hide()
 
 	# Spawn 100 plushies
 	#spawn_plushies(222)
@@ -49,3 +56,25 @@ func spawn_plushies(count: int) -> void:
 		
 		# Add the new plush to the scene
 		add_child(new_plush)
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		dialogue.show()
+		player.game_paused = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		dialogue.hide()
+
+
+func start() -> void:
+	crane_animation_player.play("open")
+	railing_animation_player.play("raise")
+
+
+func stop() -> void:
+	crane_animation_player.play_backwards("open")
+	railing_animation_player.play_backwards("raise")
