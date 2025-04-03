@@ -6,6 +6,8 @@ extends Control
 
 func _on_play_pressed() -> void:
 	hide()
+	trendy_game.get_node("Effects").stream = load("res://assets/sounds/00001 - WAV_1_GUESS_BANK_SE_SYSTEM.wav")
+	trendy_game.get_node("Effects").play()
 	player.game_paused = false
 	player.velocity = Vector3.ZERO
 	player.animation_player.stop()
@@ -14,8 +16,13 @@ func _on_play_pressed() -> void:
 
 func _on_pass_pressed() -> void:
 	hide()
+	trendy_game.get_node("Effects").stream = load("res://assets/sounds/00002 - WAV_2_GUESS_BANK_SE_SYSTEM.wav")
+	trendy_game.get_node("Effects").play()
 	player.game_paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if trendy_game.is_playing:
+		trendy_game.stop()
+		trendy_game.is_playing = false
 
 
 func _on_pass_mouse_entered() -> void:

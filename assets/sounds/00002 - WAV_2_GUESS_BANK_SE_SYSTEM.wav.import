@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4kcfosw7imwb"
+path="res://.godot/imported/00002 - WAV_2_GUESS_BANK_SE_SYSTEM.wav-71b07457470372d453c03b2132854760.sample"
+
+[deps]
+
+source_file="res://assets/sounds/00002 - WAV_2_GUESS_BANK_SE_SYSTEM.wav"
+dest_files=["res://.godot/imported/00002 - WAV_2_GUESS_BANK_SE_SYSTEM.wav-71b07457470372d453c03b2132854760.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

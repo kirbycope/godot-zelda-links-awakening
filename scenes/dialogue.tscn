@@ -7,6 +7,9 @@
 [ext_resource type="FontFile" uid="uid://bigb8o1dramhu" path="res://assets/poppins/Poppins-Regular.ttf" id="4_led2e"]
 [ext_resource type="Texture2D" uid="uid://w3xhxy6evbsg" path="res://assets/images/deco-leaves-gold.png" id="5_x1cjp"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_x1cjp"]
+font = ExtResource("4_led2e")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp716"]
 bg_color = Color(0, 0, 0, 0.490196)
 border_width_left = 2
@@ -34,9 +37,6 @@ corner_radius_bottom_left = 24
 [sub_resource type="LabelSettings" id="LabelSettings_3n4vj"]
 font = ExtResource("4_led2e")
 font_size = 36
-
-[sub_resource type="LabelSettings" id="LabelSettings_x1cjp"]
-font = ExtResource("4_led2e")
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -95,6 +95,17 @@ offset_right = 496.0
 offset_bottom = 226.0
 texture = ExtResource("2_fyky8")
 flip_h = true
+
+[node name="Text" type="Label" parent="Body"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 88.0
+offset_right = 485.0
+offset_bottom = 139.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+label_settings = SubResource("LabelSettings_x1cjp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Play" type="Button" parent="Body"]
 layout_mode = 0
@@ -193,17 +204,6 @@ offset_right = 193.0
 offset_bottom = 48.0
 text = "Gamester"
 label_settings = SubResource("LabelSettings_3n4vj")
-
-[node name="Text" type="Label" parent="Header"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 72.0
-offset_right = 485.0
-offset_bottom = 123.0
-text = "TRENDY GAME! One play 10 rupees."
-label_settings = SubResource("LabelSettings_x1cjp")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Body/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Body/Play" to="." method="_on_play_mouse_exited"]

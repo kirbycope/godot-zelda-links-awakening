@@ -2,13 +2,15 @@ extends Node3D
 
 @onready var crane: Node3D = $Crane
 @onready var crane_animation_player: AnimationPlayer = $Crane/Armature/AnimationPlayer
-@onready var crane_starting_position: Vector3
 @onready var dialogue: Control = $Player/CameraMount/Camera3D/Dialogue
+@onready var dialogue_text: Control = $Player/CameraMount/Camera3D/Dialogue/Body/Text
 @onready var godot_plush = $GodotPlush
 @onready var player: CharacterBody3D = $Player
 @onready var player_animation_player: AnimationPlayer = $Player/Visuals/AuxScene/AnimationPlayer
 @onready var railing_animation_player: AnimationPlayer = $Railing/AnimationPlayer
 
+var crane_locked := false
+var crane_starting_position: Vector3
 var is_playing := false
 
 
@@ -18,16 +20,17 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if is_playing:
+	if is_playing and crane_locked != true:
 		if Input.is_action_pressed("move_up"):
-			crane.global_position.z -= delta
+			crane.global_position.z -= delta * 1.5
 		elif Input.is_action_pressed("move_down"):
-			crane.global_position.z += delta
+			crane.global_position.z += delta * 1.5
 		elif Input.is_action_pressed("move_left"):
-			crane.global_position.x -= delta
+			crane.global_position.x -= delta * 1.5
 		elif Input.is_action_pressed("move_right"):
-			crane.global_position.x += delta
+			crane.global_position.x += delta * 1.5
 		elif Input.is_action_pressed("jump"):
+			crane_locked = true
 			var new_position = Vector3(crane.global_position.x, crane.global_position.y - 1.2, crane.global_position.z)
 			var tween = player.get_tree().create_tween()
 			tween.tween_property(crane, "global_position", new_position, 1.0)
@@ -39,6 +42,10 @@ func _process(delta: float) -> void:
 			tween2.tween_property(crane, "global_position", crane_starting_position, 2.0)
 			await get_tree().create_timer(2.0).timeout
 			crane_animation_player.play("open")
+			dialogue_text.text = "Challenge again?"
+			dialogue.show()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -95,6 +102,7 @@ func spawn_plushies(count: int) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		player_animation_player.stop()
+		dialogue_text.text = "TRENDY GAME! One play 10 rupees."
 		dialogue.show()
 		player.game_paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -108,6 +116,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func start() -> void:
 	if not is_playing:
+		crane_locked = false
 		crane_animation_player.play("open")
 		railing_animation_player.play("raise")
 	is_playing = true

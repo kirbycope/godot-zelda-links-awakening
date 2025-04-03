@@ -593,7 +593,7 @@ size = Vector3(0.1, 0.3, 0.1)
 [node name="Crane" type="Node3D"]
 
 [node name="Armature" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2.61891)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.431247, 3.2)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
 bones/0/name = "root"
@@ -672,7 +672,7 @@ libraries = {
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -2.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.636024, 0.771669, 0, -0.771669, 0.636024, 0, -0.170606, 0.25)
@@ -687,7 +687,7 @@ transform = Transform3D(1, 0, 0, 0, 0.58076, -0.814075, 0, 0.814075, 0.58076, 0,
 shape = SubResource("BoxShape3D_ro4ur")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -2.2, 0)
+transform = Transform3D(-4.34399e-06, 0, -1.2, 0, 1.2, 0, 1.2, 0, -4.34399e-06, 0, -2.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 0.636024, 0.771669, 0, -0.771669, 0.636024, 0, -0.170606, 0.25)
@@ -702,7 +702,7 @@ transform = Transform3D(1, 0, 0, 0, 0.58076, -0.814075, 0, 0.814075, 0.58076, 0,
 shape = SubResource("BoxShape3D_ro4ur")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -2.2, 0)
+transform = Transform3D(-1.2, 0, 3.04222e-06, 0, 1.2, 0, -3.04222e-06, 0, -1.2, 0, -2.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 0.636024, 0.771669, 0, -0.771669, 0.636024, 0, -0.170606, 0.25)
@@ -717,7 +717,7 @@ transform = Transform3D(1, 0, 0, 0, 0.58076, -0.814075, 0, 0.814075, 0.58076, 0,
 shape = SubResource("BoxShape3D_ro4ur")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 0, -2.2, 0)
+transform = Transform3D(-4.34399e-06, 0, 1.2, 0, 1.2, 0, -1.2, 0, -4.34399e-06, 0, -2.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 0.636024, 0.771669, 0, -0.771669, 0.636024, 0, -0.170606, 0.25)
