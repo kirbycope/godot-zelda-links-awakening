@@ -108,7 +108,7 @@ theme_override_fonts/font = ExtResource("4_led2e")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/hover = SubResource("StyleBoxFlat_tp716")
 theme_override_styles/normal = SubResource("StyleBoxFlat_03vpb")
-text = "⎯⎯ Play⎯⎯ "
+text = "- Play -"
 
 [node name="TextureRect" type="TextureRect" parent="Body/Play"]
 layout_mode = 0
@@ -141,7 +141,7 @@ theme_override_fonts/font = ExtResource("4_led2e")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/hover = SubResource("StyleBoxFlat_tp716")
 theme_override_styles/normal = SubResource("StyleBoxFlat_03vpb")
-text = "⎯⎯ Pass⎯⎯ "
+text = "- Pass -"
 
 [node name="TextureRect" type="TextureRect" parent="Body/Pass"]
 layout_mode = 0
