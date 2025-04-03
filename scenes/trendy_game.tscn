@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyxt6p2sbl7mm"]
+[gd_scene load_steps=18 format=3 uid="uid://cyxt6p2sbl7mm"]
 
 [ext_resource type="Script" uid="uid://jrhnlttn66hu" path="res://scenes/trendy_game.gd" id="1_a011m"]
 [ext_resource type="AudioStream" uid="uid://jp4d5vrqpn7y" path="res://assets/zelda_trendy/1.13 Trendy Game.ogg" id="1_ov7p3"]
 [ext_resource type="PackedScene" uid="uid://wgillhnocia4" path="res://assets/zelda_trendy/interior.gltf" id="2_a011m"]
 [ext_resource type="PackedScene" uid="uid://e6ln0lib3t1" path="res://scenes/player_3d.tscn" id="3_omh43"]
+[ext_resource type="PackedScene" uid="uid://c4ofy6cyglna8" path="res://scenes/crane.tscn" id="3_pccc8"]
+[ext_resource type="Script" uid="uid://b3obpenvhqdv3" path="res://scenes/conveyor.gd" id="5_e62at"]
+[ext_resource type="PackedScene" uid="uid://lvbieafgx02j" path="res://scenes/godot_plush.tscn" id="5_ioi2s"]
 [ext_resource type="PackedScene" uid="uid://cnbolnusafmch" path="res://assets/zelda_trendy/buttons.gltf" id="5_qm60x"]
 [ext_resource type="PackedScene" uid="uid://dieri7jmaoxmn" path="res://assets/zelda_trendy/railing.gltf" id="6_iyb67"]
 [ext_resource type="PackedScene" uid="uid://cqcas5o6lnxuw" path="res://assets/gamester/NpcGameShopOwner.fbx" id="7_omh43"]
@@ -20,6 +23,9 @@ background_mode = 2
 sky = SubResource("Sky_omh43")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ioi2s"]
+size = Vector3(2.9397, 0.401123, 1.50708)
 
 [sub_resource type="Animation" id="Animation_e62at"]
 length = 0.001
@@ -61,7 +67,7 @@ _data = {
 script = ExtResource("1_a011m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -71,7 +77,14 @@ environment = SubResource("Environment_e62at")
 stream = ExtResource("1_ov7p3")
 autoplay = true
 
+[node name="Crane" parent="." instance=ExtResource("3_pccc8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8, 5, -1.5)
+
 [node name="Player" parent="." instance=ExtResource("3_omh43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="Godot Plush" parent="." instance=ExtResource("5_ioi2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32562, 0.937731, -2.26081)
 
 [node name="interior" parent="." instance=ExtResource("2_a011m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
@@ -113,10 +126,16 @@ use_collision = true
 size = Vector3(1.07227, 1.0802, 2.961)
 
 [node name="Platform" type="CSGBox3D" parent="interior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.15, -2.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.487549, 0.15, -2.2)
 visible = false
 use_collision = true
-size = Vector3(12, 1.3, 3)
+size = Vector3(8.0249, 1.3, 3)
+
+[node name="Platform2" type="CSGBox3D" parent="interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51385, 0.15, -2.97246)
+visible = false
+use_collision = true
+size = Vector3(3.97229, 1.3, 1.45508)
 
 [node name="Railing" type="CSGBox3D" parent="interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374219, 1, -0.85)
@@ -129,6 +148,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0335449, -4.5)
 visible = false
 use_collision = true
 size = Vector3(12, 1.06709, 1.6)
+
+[node name="Conveyor" type="Area3D" parent="interior"]
+script = ExtResource("5_e62at")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interior/Conveyor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21044, 0.595606, -1.4811)
+shape = SubResource("BoxShape3D_ioi2s")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="interior/Conveyor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2472, 0.111084, -1.46629)
+visible = false
+use_collision = true
+size = Vector3(2.99275, 1.21826, 1.51703)
 
 [node name="buttons" parent="." instance=ExtResource("5_qm60x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13776, 0, -0.605592)
@@ -160,3 +192,6 @@ libraries = {
 
 [node name="NpcGameShopOwner" parent="." instance=ExtResource("7_omh43")]
 transform = Transform3D(-1.39876e-06, 0, -32, 0, 32, 0, 32, 0, -1.39876e-06, 4.77138, 0, 0.794854)
+
+[connection signal="body_entered" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_entered"]
+[connection signal="body_exited" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_exited"]
