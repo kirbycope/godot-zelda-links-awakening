@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 			crane.global_position.x -= delta * 1.5
 		elif Input.is_action_pressed("move_right"):
 			crane.global_position.x += delta * 1.5
-		elif Input.is_action_pressed("jump"):
+		elif Input.is_action_pressed("jump") and crane.global_position != crane_starting_position :
 			crane_locked = true
 			var new_position = Vector3(crane.global_position.x, crane.global_position.y - 1.2, crane.global_position.z)
 			var tween = player.get_tree().create_tween()
@@ -49,11 +49,7 @@ func _process(delta: float) -> void:
 			dialogue_text.text = "Challenge again?"
 			dialogue.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if is_playing and crane_locked:
-		if Input.is_action_just_pressed("jump"):
-			dialogue._on_play_pressed()
-		elif Input.is_action_just_pressed("sprint"):
-			dialogue._on_pass_pressed()
+
 
 
 ## Called when the node enters the scene tree for the first time.

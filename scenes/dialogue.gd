@@ -8,6 +8,20 @@ const _00002___WAV_2_GUESS_BANK_SE_SYSTEM = preload("res://assets/sounds/00002 -
 @onready var trendy_game: Node3D = $"../../../.."
 
 
+func _input(event: InputEvent) -> void:
+	# Check if the dialogue is visible
+	if visible:
+		# Check if the player accept the challenge
+		if event.is_action_pressed("jump"):
+			_on_play_pressed()
+		# Check if the player declines the challenge
+		elif Input.is_action_just_pressed("sprint"):
+			_on_pass_pressed()
+		# Check if the player is trying to pause
+		elif event.is_action_pressed("start"):
+			_on_pass_pressed()
+
+
 func _on_play_pressed() -> void:
 	hide()
 	trendy_game.get_node("Effects").stream = _00001___WAV_1_GUESS_BANK_SE_SYSTEM
