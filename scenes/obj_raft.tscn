@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://bg7wpgnsn0jng"]
+[gd_scene load_steps=5 format=4 uid="uid://bg7wpgnsn0jng"]
 
 [ext_resource type="Texture2D" uid="uid://bino8l7k4g76l" path="res://assets/rapid_raft/mi_raft_01_alb.png" id="1_k3qgg"]
 
@@ -28,7 +28,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="ObjRaft" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3qgg"]
+size = Vector3(1.2, 0.5, 1.2)
+
+[node name="ObjRaft" type="AnimatableBody3D"]
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 0, 0, 0)
@@ -45,3 +48,7 @@ mesh = SubResource("ArrayMesh_t7yfi")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_k3qgg")

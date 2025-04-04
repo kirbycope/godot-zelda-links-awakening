@@ -32,24 +32,32 @@ func _process(delta: float) -> void:
 			crane.global_position.x -= delta * 1.5
 		elif Input.is_action_pressed("move_right"):
 			crane.global_position.x += delta * 1.5
-		elif Input.is_action_pressed("jump") and crane.global_position != crane_starting_position :
+		elif Input.is_action_pressed("jump") and crane.global_position != crane_starting_position:
 			crane_locked = true
+			# Lower crane
 			var new_position = Vector3(crane.global_position.x, crane.global_position.y - 1.2, crane.global_position.z)
 			var tween = player.get_tree().create_tween()
 			tween.tween_property(crane, "global_position", new_position, 1.0)
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0).timeout # Wait for tween to finish
+			# Close claw
 			crane_animation_player.play_backwards("open")
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0).timeout # Wait for animation to finish
+			# Raise crane
 			var tween2 = player.get_tree().create_tween()
-			# ToDo: Make so that it takes longer to return the further from crane_starting_position
-			tween2.tween_property(crane, "global_position", crane_starting_position, 2.0)
-			await get_tree().create_timer(2.0).timeout
+			new_position = Vector3(crane.global_position.x, crane.global_position.y + 1.2, crane.global_position.z)
+			tween2.tween_property(crane, "global_position", new_position, 1.0)
+			await get_tree().create_timer(1.0).timeout # Wait for tween to finish
+			# Return crane to starting position
+			var tween3 = player.get_tree().create_tween()
+			var distance = crane.global_position.distance_to(crane_starting_position)
+			var return_time = clamp(distance * 0.8, 2.0, 5.0)
+			tween3.tween_property(crane, "global_position", crane_starting_position, return_time)
+			await get_tree().create_timer(return_time).timeout # Wait for tween to finish
 			crane_animation_player.play("open")
-			await get_tree().create_timer(2.0).timeout
+			await get_tree().create_timer(2.0).timeout # Wait for animation to finish
 			dialogue_text.text = "Challenge again?"
 			dialogue.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
 
 
 ## Called when the node enters the scene tree for the first time.
@@ -90,9 +98,9 @@ func spawn_plushies(count: int) -> void:
 		
 		# Add random rotation for variety
 		new_plush.rotation = Vector3(
-			randf_range(0, TAU),  # Random rotation around X axis
-			randf_range(0, TAU),  # Random rotation around Y axis
-			randf_range(0, TAU)   # Random rotation around Z axis
+			randf_range(0, TAU), # Random rotation around X axis
+			randf_range(0, TAU), # Random rotation around Y axis
+			randf_range(0, TAU) # Random rotation around Z axis
 		)
 		
 		# Add a small random scale variation

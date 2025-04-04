@@ -2158,7 +2158,7 @@ shape = SubResource("CapsuleShape3D_5e6s3")
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="AuxScene" type="Node3D" parent="Visuals"]
-transform = Transform3D(-32, 0, -2.79753e-06, 0, 32, 0, 2.79753e-06, 0, -32, 0, 0, 0)
+transform = Transform3D(-32, 0, -4.83187e-06, 0, 32, 0, 4.83187e-06, 0, -32, 0, 0, 0)
 
 [node name="Armature" type="Node3D" parent="Visuals/AuxScene"]
 transform = Transform3D(2.54, 0, 0, 0, 2.54, 0, 0, 0, 2.54, 1.43272e-10, 0.00127637, -7.16902e-05)
@@ -2483,8 +2483,8 @@ bones/45/name = "hat_a"
 bones/45/parent = 39
 bones/45/rest = Transform3D(-0.229282, -0.97336, 3.36187e-07, 0.97336, -0.229282, 1.29319e-08, 6.44943e-08, 3.30196e-07, 1, 0.00472697, 0.00168695, 7.76948e-10)
 bones/45/enabled = true
-bones/45/position = Vector3(0.00472697, 0.00168695, 7.76947e-10)
-bones/45/rotation = Quaternion(-2.3716e-09, 3.01511e-08, 0.78399, 0.620773)
+bones/45/position = Vector3(0.00472697, 0.00168695, 7.76948e-10)
+bones/45/rotation = Quaternion(1.2777e-07, 1.09417e-07, 0.78399, 0.620773)
 bones/45/scale = Vector3(1, 1, 1)
 bones/46/name = "hat_b"
 bones/46/parent = 45

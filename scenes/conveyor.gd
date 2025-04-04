@@ -1,17 +1,16 @@
 extends Area3D
 
-@export var speed = 5.0  # Speed of the conveyor belt
-@export var direction = Vector3(0, 0, 1)  # Direction of movement (default: +X axis)
-@export var belt_material: StandardMaterial3D  # Reference to the belt material for texture animation
+@export var speed = 5.0 # Speed of the conveyor belt
+@export var direction = Vector3(0, 0, 1) # Direction of movement (default: +X axis)
+@export var belt_material: StandardMaterial3D # Reference to the belt material for texture animation
 
-var _bodies_on_belt = []  # Array to track objects on the belt
+var _bodies_on_belt = [] # Array to track objects on the belt
 
 func _ready():
 	var belt: MeshInstance3D = $"../Armature/Skeleton3D/BeltConveyor__MI_BeltConveyor_01"
 	belt_material = belt.mesh.surface_get_material(0)
 
 func _physics_process(delta):
-
 	# Apply force to all bodies on the belt
 	for body in _bodies_on_belt:
 		if body is RigidBody3D:
@@ -35,7 +34,7 @@ func _physics_process(delta):
 	
 	# Animate the material texture (optional)
 	if belt_material:
-		belt_material.uv1_offset.y -= speed*.50 * delta * 0.1
+		belt_material.uv1_offset.y -= speed * .50 * delta * 0.1
 
 
 func _on_body_entered(body):
