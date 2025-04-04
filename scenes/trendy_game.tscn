@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyxt6p2sbl7mm"]
+[gd_scene load_steps=20 format=3 uid="uid://cyxt6p2sbl7mm"]
 
 [ext_resource type="Script" uid="uid://jrhnlttn66hu" path="res://scenes/trendy_game.gd" id="1_a011m"]
 [ext_resource type="AudioStream" uid="uid://jp4d5vrqpn7y" path="res://assets/zelda_trendy/1.13 Trendy Game.ogg" id="1_ov7p3"]
@@ -26,6 +26,10 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ioi2s"]
 size = Vector3(2.9397, 0.401123, 1.50708)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pccc8"]
+radius = 0.1
+height = 0.2
 
 [sub_resource type="Animation" id="Animation_e62at"]
 length = 0.001
@@ -64,7 +68,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pccc8"]
-size = Vector3(1.5, 0.4, 0.5)
+size = Vector3(1.5, 0.4, 0.3)
 
 [node name="TrendyGame" type="Node3D"]
 script = ExtResource("1_a011m")
@@ -200,6 +204,11 @@ visible = false
 use_collision = true
 size = Vector3(1.6, 0.1, 0.7)
 
+[node name="ButtonsPosition" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15, 0, 0.2)
+visible = false
+mesh = SubResource("SphereMesh_pccc8")
+
 [node name="Railing" parent="." instance=ExtResource("9_siuir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14126, -1.12047, 0.745532)
 
@@ -221,7 +230,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.7713
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0.2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500001, 0.2, -0.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500001, 0.2, -0.35)
 shape = SubResource("BoxShape3D_pccc8")
 
 [connection signal="body_entered" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_entered"]

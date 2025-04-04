@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var buttons_position: MeshInstance3D = $ButtonsPosition
 @onready var crane: Node3D = $Crane
 @onready var crane_animation_player: AnimationPlayer = $Crane/Armature/AnimationPlayer
 @onready var dialogue: Control = $Player/CameraMount/Camera3D/Dialogue
@@ -8,7 +9,6 @@ extends Node3D
 @onready var player: CharacterBody3D = $Player
 @onready var player_animation_player: AnimationPlayer = $Player/Visuals/AuxScene/AnimationPlayer
 @onready var railing_animation_player: AnimationPlayer = $Railing/AnimationPlayer
-
 var crane_locked := false
 var crane_starting_position: Vector3
 var is_playing := false
@@ -17,6 +17,9 @@ var is_playing := false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("start") and is_playing:
 		stop()
+	if dialogue.visible and not is_playing:
+		if Input.is_action_just_pressed("start"):
+			dialogue._on_pass_pressed()
 
 
 func _process(delta: float) -> void:
@@ -42,6 +45,7 @@ func _process(delta: float) -> void:
 			tween2.tween_property(crane, "global_position", crane_starting_position, 2.0)
 			await get_tree().create_timer(2.0).timeout
 			crane_animation_player.play("open")
+			await get_tree().create_timer(2.0).timeout
 			dialogue_text.text = "Challenge again?"
 			dialogue.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -111,6 +115,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		dialogue.show()
 		player.game_paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		var tween = player.get_tree().create_tween()
+		tween.parallel().tween_property(player, "global_transform", buttons_position.global_transform, 0.2)
+		tween.parallel().tween_property(player.visuals, "global_transform", buttons_position.global_transform, 0.2)
 
 
 ## Called when a body exits the Area3D (in front of the button console).
@@ -121,9 +128,9 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func start() -> void:
 	if not is_playing:
-		crane_locked = false
 		crane_animation_player.play("open")
 		railing_animation_player.play("raise")
+	crane_locked = false
 	is_playing = true
 	player.game_paused = true
 
