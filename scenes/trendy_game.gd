@@ -45,6 +45,11 @@ func _process(delta: float) -> void:
 			dialogue_text.text = "Challenge again?"
 			dialogue.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if is_playing and crane_locked:
+		if Input.is_action_just_pressed("jump"):
+			dialogue._on_play_pressed()
+		elif Input.is_action_just_pressed("sprint"):
+			dialogue._on_pass_pressed()
 
 
 ## Called when the node enters the scene tree for the first time.

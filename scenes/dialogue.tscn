@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tseulsfff0i6"]
+[gd_scene load_steps=13 format=3 uid="uid://tseulsfff0i6"]
 
 [ext_resource type="Texture2D" uid="uid://3kcrr46hb4h0" path="res://assets/images/pattern-green-diamond.jpg" id="1_bfpow"]
 [ext_resource type="Texture2D" uid="uid://da6dmnrgu7vco" path="res://assets/images/pattern-blk-diamond.jpg" id="1_jwyou"]
@@ -33,6 +33,12 @@ corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vogiq"]
+size = Vector2(184, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1cjp"]
+size = Vector2(184, 43)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3n4vj"]
 font = ExtResource("4_led2e")
@@ -140,6 +146,11 @@ texture = ExtResource("5_x1cjp")
 stretch_mode = 2
 flip_h = true
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Body/Play"]
+position = Vector2(92, 22)
+shape = SubResource("RectangleShape2D_vogiq")
+action = "jump"
+
 [node name="Pass" type="Button" parent="Body"]
 layout_mode = 0
 offset_left = 261.0
@@ -172,6 +183,11 @@ offset_bottom = 36.0
 texture = ExtResource("5_x1cjp")
 stretch_mode = 2
 flip_h = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Body/Pass"]
+position = Vector2(92, 22)
+shape = SubResource("RectangleShape2D_x1cjp")
+action = "sprint"
 
 [node name="Header" type="Control" parent="."]
 anchors_preset = 0
