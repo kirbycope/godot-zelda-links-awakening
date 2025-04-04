@@ -5,7 +5,7 @@ extends Node3D
 @onready var crane_animation_player: AnimationPlayer = $Crane/Armature/AnimationPlayer
 @onready var dialogue: Control = $Player/CameraMount/Camera3D/Dialogue
 @onready var dialogue_text: Control = $Player/CameraMount/Camera3D/Dialogue/Body/Text
-@onready var godot_plush = $GodotPlush
+@onready var godot_plush = $Prizes/GodotPlush
 @onready var player: CharacterBody3D = $Player
 @onready var player_animation_player: AnimationPlayer = $Player/Visuals/AuxScene/AnimationPlayer
 @onready var railing_animation_player: AnimationPlayer = $Railing/AnimationPlayer

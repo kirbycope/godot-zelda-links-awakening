@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://lvbieafgx02j"]
+[gd_scene load_steps=18 format=4 uid="uid://lvbieafgx02j"]
 
 [ext_resource type="Texture2D" uid="uid://cnnrwhsvdpkpp" path="res://assets/godotplushie/textures/texturagodou.jpg" id="1_a6164"]
+[ext_resource type="Script" uid="uid://c12kvrk8mrkt7" path="res://scenes/godot_plush.gd" id="1_fv3pk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vc8tl"]
 resource_name = "Material.001"
@@ -2973,12 +2974,16 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_a6164"]
 radius = 0.22
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fv3pk"]
+
 [node name="GodotPlush" type="RigidBody3D"]
+script = ExtResource("1_fv3pk")
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -3196,5 +3201,14 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.184182, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.184182, 0)
 shape = SubResource("SphereShape3D_a6164")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_fv3pk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
