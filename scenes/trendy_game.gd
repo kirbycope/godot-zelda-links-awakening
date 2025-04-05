@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var buttons: Node3D = $Buttons
 @onready var buttons_position: MeshInstance3D = $ButtonsPosition
 @onready var crane: Node3D = $Crane
 @onready var crane_animation_player: AnimationPlayer = $Crane/Armature/AnimationPlayer
@@ -33,6 +34,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_pressed("move_right"):
 			crane.global_position.x += delta * 1.5
 		elif Input.is_action_pressed("jump") and crane.global_position != crane_starting_position:
+			buttons.disable_highlight_effect()
 			crane_locked = true
 			# Lower crane
 			var new_position = Vector3(crane.global_position.x, crane.global_position.y - 1.2, crane.global_position.z)
@@ -134,12 +136,14 @@ func start() -> void:
 	if not is_playing:
 		crane_animation_player.play("open")
 		railing_animation_player.play("raise")
+	buttons.enable_highlight_effect()
 	crane_locked = false
 	is_playing = true
 	player.game_paused = true
 
 
 func stop() -> void:
+	buttons.disable_highlight_effect()
 	crane_animation_player.play_backwards("open")
 	railing_animation_player.play_backwards("raise")
 	is_playing = false
