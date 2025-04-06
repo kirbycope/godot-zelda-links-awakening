@@ -9,7 +9,7 @@
 resource_name = "MI_body"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_dbqg7")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -140,7 +140,7 @@ bind/32/pose = Transform3D(0.996194, -2.83122e-07, -0.087156, 0.087156, -2.94015
 resource_name = "MI_body"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_dbqg7")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -179,7 +179,7 @@ resource_name = "MI_gkasses"
 transparency = 4
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_30wen")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -214,7 +214,7 @@ bind/0/pose = Transform3D(-2.49594e-07, -0.982499, -0.186265, 5.88471e-08, -0.18
 resource_name = "MI_eye"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("3_ha8v2")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -249,7 +249,7 @@ bind/0/pose = Transform3D(-6.70552e-08, -0.0438502, 0.999038, 3.65159e-06, 0.999
 resource_name = "MI_face"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_xbb62")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 

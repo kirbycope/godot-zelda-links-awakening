@@ -24,7 +24,7 @@
 resource_name = "MI_CrnGame_05"
 cull_mode = 2
 albedo_texture = ExtResource("1_1ddt4")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_14e8q"]
 resource_name = "interior_base_01_low__MI_CrnGame_05"
@@ -57,7 +57,7 @@ bind/0/pose = Transform3D(1, 0, 0, 0, 1, -7.54979e-08, 0, 7.54979e-08, 1, 0, 0, 
 resource_name = "MI_CrnGame_06"
 cull_mode = 2
 albedo_texture = ExtResource("2_ypavb")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jxxat"]
 resource_name = "interior_base_02_low__MI_CrnGame_06"
@@ -82,7 +82,7 @@ blend_shape_mode = 0
 resource_name = "MI_BeltConveyor_01"
 cull_mode = 2
 albedo_texture = ExtResource("3_wq1nu")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h1f4q"]
 resource_name = "interior_BeltConveyor__MI_BeltConveyor_01"
@@ -108,7 +108,7 @@ blend_shape_mode = 0
 resource_name = "MI_plants_01"
 cull_mode = 2
 albedo_texture = ExtResource("4_h5dao")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ndy0l"]
 resource_name = "interior_cactus01__MI_plants_01"
@@ -134,7 +134,7 @@ blend_shape_mode = 0
 resource_name = "MI_CandleStick_01"
 cull_mode = 2
 albedo_texture = ExtResource("5_fcmme")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_780cn"]
 resource_name = "interior_candlestick__MI_CandleStick_01"
@@ -160,7 +160,7 @@ blend_shape_mode = 0
 resource_name = "MI_CandyBasket_01"
 cull_mode = 2
 albedo_texture = ExtResource("6_bcrxv")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1k3d6"]
 resource_name = "interior_CandyBasket__MI_CandyBasket_01"
@@ -186,7 +186,7 @@ blend_shape_mode = 0
 resource_name = "MI_Curtain_01"
 cull_mode = 2
 albedo_texture = ExtResource("7_q68ed")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0qwvm"]
 resource_name = "interior_curtain__MI_Curtain_01"
@@ -212,7 +212,7 @@ blend_shape_mode = 0
 resource_name = "MI_dolls_01"
 cull_mode = 2
 albedo_texture = ExtResource("8_nr6x6")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tg6bt"]
 resource_name = "interior_dolls_cloth__MI_dolls_01"
@@ -238,7 +238,7 @@ blend_shape_mode = 0
 resource_name = "MI_CrnGame_04"
 cull_mode = 2
 albedo_texture = ExtResource("9_ey8pu")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wmu7a"]
 resource_name = "interior_entrance__MI_CrnGame_04"
@@ -263,7 +263,7 @@ blend_shape_mode = 0
 resource_name = "MI_handrail_01"
 cull_mode = 2
 albedo_texture = ExtResource("10_3tiud")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7o75t"]
 resource_name = "interior_handrail_haiti1__MI_handrail_01"
@@ -289,7 +289,7 @@ blend_shape_mode = 0
 resource_name = "MI_CrnGame_01"
 cull_mode = 2
 albedo_texture = ExtResource("11_e31rw")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h10tl"]
 resource_name = "interior_hasira__MI_CrnGame_01"
@@ -315,7 +315,7 @@ blend_shape_mode = 0
 resource_name = "MI_CrnGame_03"
 cull_mode = 2
 albedo_texture = ExtResource("12_qr5bs")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4j8v0"]
 resource_name = "interior_kabe__MI_CrnGame_03"
@@ -340,7 +340,7 @@ blend_shape_mode = 0
 resource_name = "MI_object_01"
 cull_mode = 2
 albedo_texture = ExtResource("13_1sugv")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wf50k"]
 resource_name = "interior_object01__MI_object_01"
@@ -366,7 +366,7 @@ blend_shape_mode = 0
 resource_name = "MI_UnopenedBox_01"
 cull_mode = 2
 albedo_texture = ExtResource("14_psmkm")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_62l6x"]
 resource_name = "interior_UnopenedBox__MI_UnopenedBox_01"
@@ -392,7 +392,7 @@ blend_shape_mode = 0
 resource_name = "MI_woodbox_01"
 cull_mode = 2
 albedo_texture = ExtResource("15_xffnt")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ixhkn"]
 resource_name = "interior_woodbox1__MI_woodbox_01"
@@ -418,7 +418,7 @@ blend_shape_mode = 0
 resource_name = "MI_woodcraft_01"
 cull_mode = 2
 albedo_texture = ExtResource("16_uspks")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8hya0"]
 resource_name = "interior_woodcraft__MI_woodcraft_01"
@@ -444,7 +444,7 @@ blend_shape_mode = 0
 resource_name = "MI_CrnGame_02"
 cull_mode = 2
 albedo_texture = ExtResource("17_vygwa")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c8ne3"]
 resource_name = "interior_yuka__MI_CrnGame_02"
@@ -470,7 +470,7 @@ blend_shape_mode = 0
 resource_name = "MI_CrnGame_07"
 cull_mode = 2
 albedo_texture = ExtResource("18_b26qn")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkcqd"]
 resource_name = "interior_yuka_saku__MI_CrnGame_07"
@@ -496,7 +496,7 @@ blend_shape_mode = 0
 resource_name = "MI_ZoraDoll_01"
 cull_mode = 2
 albedo_texture = ExtResource("19_71sja")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4cfxt"]
 resource_name = "interior_zora_doll__MI_ZoraDoll_01"

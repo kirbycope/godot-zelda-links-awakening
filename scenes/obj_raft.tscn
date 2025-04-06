@@ -6,7 +6,7 @@
 resource_name = "MI_Raft_01"
 cull_mode = 2
 albedo_texture = ExtResource("1_k3qgg")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t7yfi"]
 resource_name = "Raft__MI_Raft_01"

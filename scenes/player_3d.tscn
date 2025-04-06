@@ -84,7 +84,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_hpu2h")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -272,7 +272,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63726e-08, 0.27
 resource_name = "MagicRod_MI_magicRod"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("5_v76wh")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -460,7 +460,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63725e-08, 0.27
 resource_name = "linkHookShot_MI_hookShot"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("6_qownd")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -488,7 +488,7 @@ blend_shape_mode = 0
 resource_name = "linkSwordA_MI_sowrdA"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("7_dt45e")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -516,7 +516,7 @@ blend_shape_mode = 0
 resource_name = "MI_eye"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("8_gqyq5")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -707,7 +707,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_hpu2h")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -895,7 +895,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63726e-08, 0.27
 resource_name = "linkSwordA_MI_sowrdAball"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("7_dt45e")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -923,7 +923,7 @@ blend_shape_mode = 0
 resource_name = "Ocarina_MI_ocarina"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("9_pqm7a")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1111,7 +1111,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63723e-08, 0.27
 resource_name = "linkShieldA_MI_shieldA"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("10_8paiw")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1139,7 +1139,7 @@ blend_shape_mode = 0
 resource_name = "MI_mouth"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("11_5hlcg")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1167,7 +1167,7 @@ blend_shape_mode = 0
 resource_name = "Shovel_MI_shovel"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("12_kt0te")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1195,7 +1195,7 @@ blend_shape_mode = 0
 resource_name = "linkSwordB_MI_sowrdB"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("13_erats")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1223,7 +1223,7 @@ blend_shape_mode = 0
 resource_name = "linkShieldB_MI_shieldB"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("14_j3112")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1254,7 +1254,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_hpu2h")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1442,7 +1442,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63726e-08, 0.27
 resource_name = "MI_flippers"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("15_27yx8")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1473,7 +1473,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_hpu2h")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1661,7 +1661,7 @@ bind/51/pose = Transform3D(1.90349e-07, -0.961009, -0.276518, -6.63726e-08, 0.27
 resource_name = "linkSwordB_MI_sowrdBball"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("13_erats")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1689,7 +1689,7 @@ blend_shape_mode = 0
 resource_name = "linkShieldB_MI_shieldBMirror"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("16_r0or8")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1717,7 +1717,7 @@ blend_shape_mode = 0
 resource_name = "MI_ear"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("17_16kxn")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1745,7 +1745,7 @@ blend_shape_mode = 0
 resource_name = "MI_hair"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("18_t5m5b")
-roughness = 0.5
+roughness = 0.2
 emission_enabled = true
 emission_energy_multiplier = 0.0
 

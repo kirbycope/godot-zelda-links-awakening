@@ -6,6 +6,7 @@ uniform float min_brightness = 0.5;  // Minimum brightness
 uniform float max_brightness = 1.5;  // Maximum brightness
 uniform bool effect_enabled = false;  // Toggle to enable/disable the effect
 uniform sampler2D albedo_texture : source_color;  // The texture input
+uniform float roughness = 0.2;  // Controls the surface roughness from 0.0 to 1.0
 
 void fragment() {
     // Get the base color from the texture
@@ -25,6 +26,9 @@ void fragment() {
         // When disabled, just use the original color
         ALBEDO = base_color.rgb;
     }
+    
+    // Set the roughness value (clamped between 0.0 and 1.0)
+    ROUGHNESS = clamp(roughness, 0.0, 1.0);
     
     // Maintain the original alpha value
     ALPHA = base_color.a;

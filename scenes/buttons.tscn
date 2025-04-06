@@ -9,7 +9,7 @@ resource_name = "MI_ControlPanel_01"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_ew542")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6d4ex"]
 resource_name = "buttons_base__MI_ControlPanel_01"
@@ -49,6 +49,7 @@ resource_name = "MI_ControlPanel_A"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_ew542")
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_52v2j"]
 resource_name = "buttons_button_A__MI_ControlPanel_A"
@@ -78,12 +79,14 @@ shader_parameter/min_brightness = 1.0
 shader_parameter/max_brightness = 3.0
 shader_parameter/effect_enabled = false
 shader_parameter/albedo_texture = ExtResource("1_ew542")
+shader_parameter/roughness = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mge2y"]
 resource_name = "MI_ControlPanel_X"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_ew542")
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5hicb"]
 resource_name = "buttons_button_X__MI_ControlPanel_X"
@@ -113,6 +116,7 @@ shader_parameter/min_brightness = 1.0
 shader_parameter/max_brightness = 3.0
 shader_parameter/effect_enabled = false
 shader_parameter/albedo_texture = ExtResource("1_ew542")
+shader_parameter/roughness = 0.2
 
 [node name="Buttons" type="Node3D"]
 script = ExtResource("1_tvki0")

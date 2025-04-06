@@ -7,7 +7,7 @@ resource_name = "MI_handrail_01"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_xpdj0")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d26b0"]
 resource_name = "railing_CraneFence__MI_handrail_01"

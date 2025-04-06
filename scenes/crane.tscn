@@ -7,7 +7,7 @@ resource_name = "MI_Crane_01.001"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x3c8v"]
 resource_name = "crane_arm01__MI_Crane_01"
@@ -56,7 +56,7 @@ resource_name = "MI_Crane_01.002"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hm2q4"]
 resource_name = "crane_arm02__MI_Crane_01"
@@ -83,7 +83,7 @@ resource_name = "MI_Crane_01.003"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vqsba"]
 resource_name = "crane_arm03__MI_Crane_01"
@@ -110,7 +110,7 @@ resource_name = "MI_Crane_01.004"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_30pvq"]
 resource_name = "crane_arm04__MI_Crane_01"
@@ -137,7 +137,7 @@ resource_name = "MI_Crane_01"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_khug0"]
 resource_name = "crane_Crane__MI_Crane_01"
@@ -163,7 +163,7 @@ resource_name = "MI_Crane_02"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_w5fhp")
-roughness = 0.5
+roughness = 0.2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_grm2v"]
 resource_name = "crane_Crane__MI_Crane_02"
