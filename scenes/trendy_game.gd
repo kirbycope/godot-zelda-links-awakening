@@ -17,7 +17,7 @@ var is_playing := false
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("start") and is_playing:
+	if event.is_action_pressed("start") and is_playing and not crane_locked:
 		stop()
 	if dialogue.visible and not is_playing:
 		if Input.is_action_just_pressed("start"):
@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if is_playing and crane_locked != true:
+	if is_playing and not crane_locked:
 		if Input.is_action_pressed("move_up"):
 			crane.global_position.z -= delta * 1.5
 		elif Input.is_action_pressed("move_down"):

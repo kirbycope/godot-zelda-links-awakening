@@ -176,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 [node name="Prizes" type="Node3D" parent="."]
 
 [node name="GodotPlush" parent="Prizes" instance=ExtResource("5_ioi2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.835818, -2.861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.1, -2.861)
 collision_layer = 2
 
 [node name="ItemHeartContainer" parent="Prizes" instance=ExtResource("6_wpwhv")]
@@ -191,6 +191,8 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.11513, -4.5)
 collision_layer = 2
 mass = 1.0
+center_of_mass = Vector3(0, -0.25, 0)
+inertia = Vector3(0, 1, 0)
 
 [node name="ObjRaft" parent="Prizes" instance=ExtResource("12_usybq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0.25, -4.5)
@@ -205,6 +207,8 @@ autoplay = "slide"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.1, -4.5)
 collision_layer = 2
 mass = 1.0
+center_of_mass = Vector3(0, 0, 0)
+inertia = Vector3(0, 1, 0)
 
 [node name="ObjRaft2" parent="Prizes" instance=ExtResource("12_usybq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -4.5)
@@ -354,7 +358,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500001, 0.2, -0.35)
 shape = SubResource("BoxShape3D_pccc8")
 
-[connection signal="body_entered" from="Interior/Conveyor" to="Interior/Conveyor" method="_on_body_entered"]
-[connection signal="body_exited" from="Interior/Conveyor" to="Interior/Conveyor" method="_on_body_exited"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
