@@ -14,17 +14,17 @@ void vertex() {
 void fragment() {
     // Calculate the animated UVs based on time
     vec2 base_uv = UV * texture_scale;
-    
+
     // Only animate along the Y-direction (assuming this is the belt's length)
     // Adjust this if your belt's orientation is different
     vec2 uv_offset = vec2(0.0, TIME * speed * 0.05);
-    
+
     // Apply the offset to the UVs
     vec2 final_uv = base_uv - uv_offset;
-    
+
     // Sample the albedo texture with the animated UVs
     vec4 albedo = texture(albedo_texture, final_uv);
-    
+
     // Output the color and material properties
     ALBEDO = albedo.rgb;
     ROUGHNESS = roughness;
