@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://jrhnlttn66hu" path="res://scenes/trendy_game.gd" id="1_a011m"]
 [ext_resource type="AudioStream" uid="uid://jp4d5vrqpn7y" path="res://assets/zelda_trendy/1.13 Trendy Game.ogg" id="1_ov7p3"]
-[ext_resource type="PackedScene" uid="uid://wgillhnocia4" path="res://assets/zelda_trendy/interior.gltf" id="2_a011m"]
 [ext_resource type="PackedScene" uid="uid://e6ln0lib3t1" path="res://scenes/player_3d.tscn" id="3_omh43"]
 [ext_resource type="PackedScene" uid="uid://c4ofy6cyglna8" path="res://scenes/crane.tscn" id="3_pccc8"]
 [ext_resource type="Script" uid="uid://b3obpenvhqdv3" path="res://scenes/conveyor.gd" id="5_e62at"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://4mq46iptdxcu" path="res://scenes/railing.tscn" id="9_siuir"]
 [ext_resource type="PackedScene" uid="uid://bj2tm2gwsn0uf" path="res://scenes/item_shield.tscn" id="9_wpwhv"]
 [ext_resource type="PackedScene" uid="uid://bxcc5v72nwrxh" path="res://scenes/npc_game_shop_owner.tscn" id="10_pccc8"]
+[ext_resource type="PackedScene" uid="uid://bkatfe0tfvu7v" path="res://scenes/interior.tscn" id="11_x0ivu"]
 [ext_resource type="PackedScene" uid="uid://bg7wpgnsn0jng" path="res://scenes/obj_raft.tscn" id="12_usybq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iyb67"]
@@ -177,15 +177,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
 [node name="GodotPlush" parent="Prizes" instance=ExtResource("5_ioi2s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.835818, -2.861)
+collision_layer = 2
 
 [node name="ItemHeartContainer" parent="Prizes" instance=ExtResource("6_wpwhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.01045, -2.9)
+collision_layer = 2
 
 [node name="ItemRupeePurple" parent="Prizes" instance=ExtResource("8_x0ivu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.1526, -2.9)
+collision_layer = 2
 
 [node name="ItemShield" parent="Prizes" instance=ExtResource("9_wpwhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.11513, -4.5)
+collision_layer = 2
+mass = 1.0
 
 [node name="ObjRaft" parent="Prizes" instance=ExtResource("12_usybq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0.25, -4.5)
@@ -198,6 +203,8 @@ autoplay = "slide"
 
 [node name="ItemMagicPowder" parent="Prizes" instance=ExtResource("7_usybq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.1, -4.5)
+collision_layer = 2
+mass = 1.0
 
 [node name="ObjRaft2" parent="Prizes" instance=ExtResource("12_usybq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -4.5)
@@ -208,95 +215,96 @@ libraries = {
 }
 autoplay = "slide"
 
-[node name="interior" parent="." instance=ExtResource("2_a011m")]
+[node name="Interior" parent="." instance=ExtResource("11_x0ivu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 
-[node name="Back Wall" type="CSGBox3D" parent="interior"]
+[node name="Back Wall" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.35, -5.4)
 visible = false
 use_collision = true
 size = Vector3(13, 3.7, 0.8)
 
-[node name="Front Wall" type="CSGBox3D" parent="interior"]
+[node name="Front Wall" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.35, 2.65)
 visible = false
 use_collision = true
 size = Vector3(5, 3.7, 0.7)
 
-[node name="Front Wall3" type="CSGBox3D" parent="interior"]
+[node name="Front Wall3" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.35, 2.65)
 visible = false
 use_collision = true
 size = Vector3(5, 3.7, 0.7)
 
-[node name="Front Wall2" type="CSGBox3D" parent="interior"]
+[node name="Front Wall2" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.35, 3.35)
 visible = false
 use_collision = true
 size = Vector3(3, 3.7, 0.7)
 
-[node name="Left Wall" type="CSGBox3D" parent="interior"]
+[node name="Left Wall" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.55, 1.35, 1)
 visible = false
 use_collision = true
 size = Vector3(0.9, 3.7, 3)
 
-[node name="Left Wall2" type="CSGBox3D" parent="interior"]
+[node name="Left Wall2" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35, 1.35, -2.75)
 visible = false
 use_collision = true
 size = Vector3(1.3, 3.7, 4.5)
 
-[node name="Right Wall" type="CSGBox3D" parent="interior"]
+[node name="Right Wall" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35, 1.35, -1.25)
 visible = false
 use_collision = true
 size = Vector3(1.3, 3.7, 7.5)
 
-[node name="Floor" type="CSGBox3D" parent="interior"]
+[node name="Floor" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.501, 0)
 visible = false
 use_collision = true
 size = Vector3(12, 1, 5)
 
-[node name="Desk" type="CSGBox3D" parent="interior"]
+[node name="Desk" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10586, 0.0401001, 0.780499)
 visible = false
 use_collision = true
 size = Vector3(1.07227, 1.0802, 2.961)
 
-[node name="Platform" type="CSGBox3D" parent="interior"]
+[node name="Platform" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.487549, 0.15, -2.2)
 visible = false
 use_collision = true
 size = Vector3(8.0249, 1.3, 3)
 
-[node name="Platform2" type="CSGBox3D" parent="interior"]
+[node name="Platform2" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51385, 0.15, -2.97246)
 visible = false
 use_collision = true
 size = Vector3(3.97229, 1.3, 1.45508)
 
-[node name="Railing" type="CSGBox3D" parent="interior"]
+[node name="Railing" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374219, 1, -0.85)
 visible = false
 use_collision = true
 size = Vector3(8.25156, 0.4, 0.3)
 
-[node name="Slot" type="CSGBox3D" parent="interior"]
+[node name="Slot" type="CSGBox3D" parent="Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0335449, -4.5)
 visible = false
 use_collision = true
 size = Vector3(12, 1.06709, 1.6)
 
-[node name="Conveyor" type="Area3D" parent="interior"]
+[node name="Conveyor" type="Area3D" parent="Interior"]
+collision_mask = 2
 script = ExtResource("5_e62at")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="interior/Conveyor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Conveyor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21044, 0.595606, -1.4811)
 shape = SubResource("BoxShape3D_ioi2s")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="interior/Conveyor"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Interior/Conveyor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2472, 0.111084, -1.46629)
 visible = false
 use_collision = true
@@ -346,7 +354,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500001, 0.2, -0.35)
 shape = SubResource("BoxShape3D_pccc8")
 
-[connection signal="body_entered" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_entered"]
-[connection signal="body_exited" from="interior/Conveyor" to="interior/Conveyor" method="_on_body_exited"]
+[connection signal="body_entered" from="Interior/Conveyor" to="Interior/Conveyor" method="_on_body_entered"]
+[connection signal="body_exited" from="Interior/Conveyor" to="Interior/Conveyor" method="_on_body_exited"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=59 format=4 uid="uid://bkatfe0tfvu7v"]
+[gd_scene load_steps=61 format=4 uid="uid://bkatfe0tfvu7v"]
 
 [ext_resource type="Texture2D" uid="uid://dsw1x7jlqbxwx" path="res://assets/zelda_trendy/textures/MI_CrnGame_05_alb.png" id="1_1ddt4"]
 [ext_resource type="Texture2D" uid="uid://dtjy2xd1qk21d" path="res://assets/zelda_trendy/textures/MI_CrnGame_06_alb.png" id="2_ypavb"]
+[ext_resource type="Shader" uid="uid://c87ry6xn1uxq7" path="res://scenes/belt_conveyor.gdshader" id="3_1ddt4"]
 [ext_resource type="Texture2D" uid="uid://g0i0b4lbejae" path="res://assets/zelda_trendy/textures/MI_BeltConveyor_01_alb.png" id="3_wq1nu"]
 [ext_resource type="Texture2D" uid="uid://bjjc6va65bt4s" path="res://assets/zelda_trendy/textures/MI_plants_01_alb.png" id="4_h5dao"]
 [ext_resource type="Texture2D" uid="uid://dyf6rc0sbrpto" path="res://assets/zelda_trendy/textures/MI_CandleStick_01_alb.png" id="5_fcmme"]
@@ -103,6 +104,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADYwP//vz6ceEO/AACowPv/vz4AABDAAADYwPv/vz4AABDAAABwwP//vz6ceEO/AABwwPv/vz4AABDAAABwwE5/xz7Nazq/AADYwE5/xz7Nazq/AABwwPCY2T4mrDa/AADYwPCY2T4mrDa/AADYwHYELT8mrDa/AABwwHYELT8mrDa/AABwwEkRNj/Oazq/AADYwEkRNj/Oazq/AABwwO/QOT+deEO/AADYwO/QOT+deEO/AADYwO3QOT8AABDAAACowO3QOT8AABDAAABwwO3QOT8AABDAAACowP//vz6ceEO/AACowE5/xz7Nazq/AACowPCY2T4mrDa/AACowHYELT8mrDa/AACowEkRNj/Oazq/AACowO/QOT+deEO//38+AfX//7//fwAA9f//v/9/AADa//+//38+Af///7//fwAA////v/9//z////+//3//P////7//f8d5////v/9/x3n///+//383hv///7//fzeG////v/9//7/4/wXA/3//v////7//f8D+/v8DwP9/wP7///+//3///////7//f///////v/9///////+//38+Af///7//f/8/////v/9/x3n///+//383hvr/AcD/f/+/+/8CwP9/wP7///+/")
 }]
 blend_shape_mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypavb"]
+render_priority = 0
+shader = ExtResource("3_1ddt4")
+shader_parameter/albedo_texture = ExtResource("3_wq1nu")
+shader_parameter/speed = 5.0
+shader_parameter/direction = Vector3(0, 0, 1)
+shader_parameter/texture_scale = 1.0
+shader_parameter/roughness = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpvdl"]
 resource_name = "MI_plants_01"
@@ -543,6 +553,7 @@ skin = SubResource("Skin_422qo")
 [node name="BeltConveyor__MI_BeltConveyor_01" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_h1f4q")
 skin = SubResource("Skin_422qo")
+surface_material_override/0 = SubResource("ShaderMaterial_ypavb")
 
 [node name="cactus01__MI_plants_01" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_ndy0l")

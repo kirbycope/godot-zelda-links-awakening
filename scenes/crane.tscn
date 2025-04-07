@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c4ofy6cyglna8"]
+[gd_scene load_steps=22 format=4 uid="uid://c4ofy6cyglna8"]
 
 [ext_resource type="Texture2D" uid="uid://w3t3y1f000hd" path="res://assets/zelda_trendy/textures/MI_Crane_01_alb.png" id="1_w5fhp"]
 
@@ -590,6 +590,10 @@ size = Vector3(0.2, 0.3, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ro4ur"]
 size = Vector3(0.2, 0.3, 0.1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_w5fhp"]
+radius = 0.1
+height = 0.2
+
 [node name="Crane" type="Node3D"]
 
 [node name="Armature" type="Node3D" parent="."]
@@ -730,3 +734,10 @@ shape = SubResource("BoxShape3D_jvixv")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 0.58076, -0.814075, 0, 0.814075, 0.58076, 0, -0.625882, 0.24919)
 shape = SubResource("BoxShape3D_ro4ur")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+target_position = Vector3(0, -3, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_w5fhp")
