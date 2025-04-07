@@ -1,9 +1,9 @@
 shader_type spatial;
 
 // Adjust these parameters to control the effect
-uniform float speed = 1.0;  // Controls how fast the brightness cycles
-uniform float min_brightness = 0.5;  // Minimum brightness
-uniform float max_brightness = 1.5;  // Maximum brightness
+uniform float speed = 2.0;  // Controls how fast the brightness cycles
+uniform float min_brightness = 1.0;  // Minimum brightness
+uniform float max_brightness = 2.0;  // Maximum brightness
 uniform bool effect_enabled = false;  // Toggle to enable/disable the effect
 uniform sampler2D albedo_texture : source_color;  // The texture input
 uniform float roughness = 0.2;  // Controls the surface roughness from 0.0 to 1.0
