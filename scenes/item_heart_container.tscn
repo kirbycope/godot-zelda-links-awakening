@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://pivh5wbrw0bv"]
+[gd_scene load_steps=10 format=4 uid="uid://pivh5wbrw0bv"]
 
+[ext_resource type="Script" uid="uid://begcu0rwrvstu" path="res://scenes/item_heart_container.gd" id="1_8v3la"]
 [ext_resource type="Texture2D" uid="uid://boycijlpd4joy" path="res://assets/heart_container/mi_heartcontainer_alb.png" id="1_beboj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3q8fi"]
@@ -60,7 +61,10 @@ size = Vector3(0.386572, 0.600583, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8v3la"]
 size = Vector3(0.2, 0.4, 0.186255)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_8v3la"]
+
 [node name="ItemHeartContainer" type="RigidBody3D"]
+script = ExtResource("1_8v3la")
 
 [node name="o_mesh_low" type="Skeleton3D" parent="."]
 transform = Transform3D(48, 0, 0, 0, -2.09815e-06, -48, 0, 48, -2.09815e-06, 0, 0, 0)
@@ -111,3 +115,11 @@ shape = SubResource("BoxShape3D_8v3la")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295441, 0.0885681, -0.0259888)
 shape = SubResource("BoxShape3D_8v3la")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_8v3la")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

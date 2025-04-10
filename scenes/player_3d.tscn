@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=4 uid="uid://e6ln0lib3t1"]
+[gd_scene load_steps=128 format=4 uid="uid://e6ln0lib3t1"]
 
 [ext_resource type="Script" uid="uid://2iaqywmqcahl" path="res://addons/3d_player_controller/player_3d.gd" id="1_qtgli"]
 [ext_resource type="PackedScene" uid="uid://c7x2c4rsai64q" path="res://addons/3d_player_controller/virtual_buttons.tscn" id="2_3l2jk"]
@@ -72,6 +72,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://brekybhmmqd5h" path="res://assets/mixamo/animations/Walking_In_Place.fbx" id="48_axmco"]
 [ext_resource type="AnimationLibrary" uid="uid://cbmqvunr5o3ut" path="res://assets/mixamo/animations/Waving.fbx" id="49_2tknc"]
 [ext_resource type="PackedScene" uid="uid://tseulsfff0i6" path="res://scenes/dialogue.tscn" id="52_xxeaf"]
+[ext_resource type="Script" uid="uid://xf1vm85b12dr" path="res://addons/3d_player_controller/camera_3d.gd" id="53_5mvvt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e6s3"]
 radius = 0.3
@@ -2129,8 +2130,83 @@ tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = PackedFloat32Array(0, 1, -0.103105, 0.103105, 0.699549, 0.699549)
 
+[sub_resource type="Animation" id="Animation_5mvvt"]
+resource_name = "fanfare"
+length = 3.14
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:spine_a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.653282, 0.270598, -0.653282, -0.270598)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:arm_R_a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.589256, -0.28389, 0.316909, 0.686842)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:arm_L_a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.589256, -0.28389, 0.316909, 0.686842)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_56fc6"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:spine_a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.653282, 0.270598, -0.653282, -0.270598)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:arm_R_a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.589256, -0.28389, 0.316909, 0.686842)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:arm_L_a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.473, -0.106496, 0.310502, 0.81763)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xh7av"]
 _data = {
+&"RESET": SubResource("Animation_56fc6"),
+&"fanfare": SubResource("Animation_5mvvt"),
 &"mixamo_com": SubResource("Animation_hfvxx")
 }
 
@@ -2147,6 +2223,7 @@ volume_db = -10.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VirtualButtons" parent="CanvasLayer" instance=ExtResource("2_3l2jk")]
+z_index = 1
 
 [node name="VirtualController3D" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("3_fdahe")
@@ -2156,6 +2233,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("CapsuleShape3D_5e6s3")
 
 [node name="Visuals" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="AuxScene" type="Node3D" parent="Visuals"]
 transform = Transform3D(-32, 0, -4.83187e-06, 0, 32, 0, 4.83187e-06, 0, -32, 0, 0, 0)
@@ -2182,8 +2260,8 @@ bones/2/name = "spine_a"
 bones/2/parent = 1
 bones/2/rest = Transform3D(2.38419e-07, 2.38419e-07, -1, 1, 0, 2.38419e-07, 0, -1, -2.38419e-07, 0, 4.33681e-19, 3.92961e-26)
 bones/2/enabled = true
-bones/2/position = Vector3(0, 0, 0)
-bones/2/rotation = Quaternion(0.5, 0.5, -0.5, -0.5)
+bones/2/position = Vector3(0, 2.32831e-10, 0)
+bones/2/rotation = Quaternion(0.653282, 0.270598, -0.653282, -0.270598)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "spine_b"
 bones/3/parent = 2
@@ -2210,8 +2288,8 @@ bones/6/name = "arm_L_a"
 bones/6/parent = 5
 bones/6/rest = Transform3D(0.891328, 1.63913e-07, 0.45336, -0.45336, -4.76837e-07, 0.891328, 3.27826e-07, -1, -3.57628e-07, 0.000859016, -0.000148572, -2.71117e-11)
 bones/6/enabled = true
-bones/6/position = Vector3(0.000859016, -0.000148573, -5.30308e-11)
-bones/6/rotation = Quaternion(-0.704907, -0.0557281, 0.0557281, 0.704907)
+bones/6/position = Vector3(0.000859016, -0.000148573, -2.25525e-10)
+bones/6/rotation = Quaternion(-0.473, -0.106496, 0.310502, 0.81763)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "arm_L_b"
 bones/7/parent = 6
@@ -2329,8 +2407,8 @@ bones/23/name = "arm_R_a"
 bones/23/parent = 22
 bones/23/rest = Transform3D(0.891328, 5.96046e-07, 0.45336, -0.45336, 2.98023e-07, 0.891328, 3.57628e-07, -1, 5.36442e-07, -0.000859014, 0.000148577, -6.83918e-10)
 bones/23/enabled = true
-bones/23/position = Vector3(-0.000859014, 0.000148578, -6.98233e-10)
-bones/23/rotation = Quaternion(-0.704907, -0.0557284, 0.055728, 0.704907)
+bones/23/position = Vector3(-0.000859014, 0.000148578, -1.00825e-09)
+bones/23/rotation = Quaternion(-0.589256, -0.28389, 0.316909, 0.686842)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "arm_R_b"
 bones/24/parent = 23
@@ -2861,6 +2939,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.6, 2.5)
+script = ExtResource("53_5mvvt")
 
 [node name="Emotes" parent="CameraMount/Camera3D" instance=ExtResource("20_5htho")]
 visible = false
@@ -2872,6 +2951,7 @@ visible = false
 visible = false
 
 [node name="Dialogue" parent="CameraMount/Camera3D" instance=ExtResource("52_xxeaf")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

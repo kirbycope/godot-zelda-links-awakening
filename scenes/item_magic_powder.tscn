@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://ddwsafv60nw7l"]
+[gd_scene load_steps=11 format=4 uid="uid://ddwsafv60nw7l"]
 
+[ext_resource type="Script" uid="uid://dvrtx8mdowdhv" path="res://scenes/item_magic_powder.gd" id="1_hqnch"]
 [ext_resource type="Texture2D" uid="uid://crhukxdgpb6ve" path="res://assets/magic_powder/mi_body_alb.png" id="1_y0h7i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aiw1n"]
@@ -84,10 +85,13 @@ blend_shape_mode = 0
 height = 0.7
 radius = 0.225
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hqnch"]
+
 [node name="ItemMagicPowder" type="RigidBody3D"]
 mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.5, 0)
+script = ExtResource("1_hqnch")
 
 [node name="nw4f_root" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -144,3 +148,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("CylinderShape3D_y0h7i")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_hqnch")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

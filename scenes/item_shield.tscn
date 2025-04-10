@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://bj2tm2gwsn0uf"]
+[gd_scene load_steps=18 format=4 uid="uid://bj2tm2gwsn0uf"]
 
+[ext_resource type="Script" uid="uid://djrks1nuyvyuh" path="res://scenes/item_shield.gd" id="1_fstp5"]
 [ext_resource type="Texture2D" uid="uid://dk1axf3wqebje" path="res://assets/shield/mi_shielda_alb.png" id="1_q08f8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb5qx"]
@@ -164,10 +165,13 @@ size = Vector3(0.3, 0.6, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fstp5"]
 size = Vector3(0.134082, 0.4, 0.2)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fstp5"]
+
 [node name="ItemShield" type="RigidBody3D"]
 mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.5, 0)
+script = ExtResource("1_fstp5")
 
 [node name="o_mesh_low" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -271,3 +275,11 @@ shape = SubResource("BoxShape3D_fstp5")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222041, -0.007, 0.016)
 shape = SubResource("BoxShape3D_fstp5")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_fstp5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

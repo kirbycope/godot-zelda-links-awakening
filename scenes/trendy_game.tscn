@@ -174,7 +174,7 @@ autoplay = true
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.8, 5, -1.5)
 
 [node name="Player" parent="." instance=ExtResource("3_omh43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 1.5)
 
 [node name="Prizes" type="Node3D" parent="."]
 

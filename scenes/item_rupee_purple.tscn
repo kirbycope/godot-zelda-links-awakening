@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://bc71vpdyagvuu"]
+[gd_scene load_steps=7 format=4 uid="uid://bc71vpdyagvuu"]
 
+[ext_resource type="Script" uid="uid://cpdrms0ig6ec8" path="res://scenes/item_rupee_purple.gd" id="1_7bc0n"]
 [ext_resource type="Texture2D" uid="uid://bpylm0xfudkvo" path="res://assets/rupee/mi_rupee_purple_alb.png" id="1_h4bi8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx0px"]
@@ -32,7 +33,10 @@ blend_shape_mode = 0
 radius = 0.2
 height = 0.8
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_7bc0n"]
+
 [node name="ItemRupeePurple" type="RigidBody3D"]
+script = ExtResource("1_7bc0n")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 0, 0, 0)
@@ -53,3 +57,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00134277, -0.0015564, 0.00845946)
 shape = SubResource("CapsuleShape3D_h4bi8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_7bc0n")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
